@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 .color{
     width: 40px;
@@ -23,18 +28,15 @@
 }
 
 #pixel-board{
-    width: 213px;
-    height: 213px;
-    border: solid black 1px;
-    position: absolute;
-    background-size: cover;
+    width: 287px;
+    height: 287px;
+    line-height: 0;
 }
 
 .pixel{
-    width: 37px;
-    height: 37px;
+    width: 50px;
+    height: 50px;
     border: solid black 1px;
     display: inline-block;
-    position: relative;
-    background-size: cover;
+    background-color: white;
 }
