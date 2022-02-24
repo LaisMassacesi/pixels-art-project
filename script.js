@@ -1,4 +1,5 @@
-const pixelBoard = document.querySelector('#pixel-board');
+const pixelBoard = document.querySelector('#pixel-board')
+
 
 
 for(let i = 0; i < 25; i += 1){
@@ -15,25 +16,55 @@ const colorPalette = document.querySelectorAll('.color');
 console.log('colorPalette:' + colorPalette);
 for(let i = 0; i < colorPalette.length; i += 1){
    console.log('entrei no for');
-   colorPalette[i].addEventListener('click', function(event){
-      const selected = document.querySelector('.selected'); 
-      console.log('selected: ' + selected);
-      selected.classList.remove('selected');
-      console.log('select.classList:' + selected.classList)
-      event.target.classList.add('selected');
-      console.log('event.target.classList:' + event.target.classList)
-      // let color = window.getComputedStyle(event.target);
-      // event.target.style.backgroundColor(selected);
-      });
+   colorPalette[i].addEventListener('click', manegerSelected);
    }
 }
-   selectColorPixel();
+
+function manegerSelected(event){
+   const selected = document.querySelector('.selected'); 
+   console.log('selected: ' + selected);
+   selected.classList.remove('selected');
+   console.log('select.classList:' + selected.classList);
+   event.target.classList.add('selected');
+   console.log('event.target.classList:' + event.target.classList);
+   // let color = window.getComputedStyle(event.target);
+   // event.target.style.backgroundColor(selected);
+}
+
+
+   
+   //função que adiciona a classe color ao pixel clicado
+function  selectPixel(event){
+   const selected = document.querySelector('.selected');
+   const color = selected.style.backgroundColor;
+   console.log('color: ' + color)
+   event.target.classList.add('color')
+}
+
+pixelBoard.addEventListener('click', function (event) {           
+   const selected = document.querySelector('.selected');
+   console.log('selected: ' + selected);
+   let cor = window.getComputedStyle(selected);
+   event.target.style.backgroundColor = cor.getPropertyValue('background-color')
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function paint (event){
 //    const pixelBoard = document.querySelectorAll('#pixel-board')
 //    pixelBoard.addEventListener('click', function(){
-//       let cor = window.getComputedStyle(selectedItemColor);
-//       event.target.style.backgroundColor = selectedItemColor.getPropertyValue('background-color'); 
+//    const cor = window.getComputedStyle(selectedItemColor);
+//    event.target.style.backgroundColor = selectedItemColor.getPropertyValue('background-color'); 
 //    })
 // }
 
