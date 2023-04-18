@@ -26,7 +26,7 @@ O projeto Pixels Art é um editor de arte com pixels. Ou seja, dada uma paleta d
 - Javascript
 - HTML
 - DOM
-- Css
+- CSS
 
 > Arquivos com código que desenvolvi :paperclips:
 - ./index.html
